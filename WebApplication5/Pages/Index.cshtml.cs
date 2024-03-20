@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using WebApplication5.Models; // Make sure this uses your actual namespace
+using WebApplication5.Models; 
 
 namespace WebApplication5.Pages
 {
@@ -8,7 +8,7 @@ namespace WebApplication5.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        [BindProperty] // This will bind form data to the property
+        [BindProperty] 
         public NewsletterSignupModel NewsletterSignupModel { get; set; }
 
         public IndexModel(ILogger<IndexModel> logger)
@@ -18,23 +18,18 @@ namespace WebApplication5.Pages
 
         public void OnGet()
         {
-            // Method when page is accessed via GET
         }
 
         public IActionResult OnPostSubscribe()
         {
             if (!ModelState.IsValid)
             {
-                // Handle the case where the model is not valid
-                return Page(); // Return back to the page to show validation errors
+                return Page(); 
             }
 
-            // Logic to handle the subscription like storing email in database
-            // For now, let's just log the email for simplicity
             _logger.LogInformation("New Newsletter Subscription: {Email}", NewsletterSignupModel.Email);
 
-            // Here, you could redirect the user to a 'Thank You' page or back to the index with a success message
-            return RedirectToPage(); // Simple redirect back to the Index page
+            return RedirectToPage(); 
         }
     }
 }

@@ -43,6 +43,5 @@ function setupValidation(form, validationSettings) {
     }
 }
 
-// Initiera validering för varje formulär
 setupValidation(updateDetailsForm, updateDetailsValidationSettings);
 setupValidation(updateAddressForm, updateAddressValidationSettings);

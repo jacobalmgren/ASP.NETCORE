@@ -36,14 +36,12 @@
                         <span class="text-weight-bold ms-2 me-4">Dark</span>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <!-- Display profile picture if the user is logged in -->
                             <a href="/AccountDetails" class="profile-picture">
-                                <img src="~/images/profile.svg" alt="Profile" class="rounded-circle" width="40" height="40"> <!-- Update this path with the actual path to the user's profile picture -->
+                                <img src="~/images/profile.svg" alt="Profile" class="rounded-circle" width="40" height="40">
                             </a>
                         }
                         else
                         {
-                            <!-- Display Sign In and Sign Up buttons if the user is not logged in -->
                             <a class="btn btn-outline-primary me-2" asp-area="" asp-page="/Account/Login">
                                 <img src="~/images/bx-log-in.svg" alt="Sign In" width="20" height="20"> Sign In
                             </a>
