@@ -1,0 +1,37 @@
+﻿@page
+@model LoginModel
+@{
+    ViewData["Title"] = "Sign in";
+    ViewData["ShowSocialIcons"] = false; 
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <h1 style="text-align: left; margin-bottom: 20px; font-weight: bold;">Welcome Back</h1>
+            <p style="text-align: left; margin-bottom: 30px;">Don't have an account yet? <a asp-page="/Account/Register" style="color: #6f42c1; text-decoration: none;">Sign up here</a>.</p>
+            <form method="post" novalidate>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="mb-3" style="text-align: left;">
+                    <label asp-for="Input.Email" class="form-label" style="font-weight: bold; margin-bottom: 20px;">Email</label>
+                    <input asp-for="Input.Email" class="form-control" placeholder="Enter your email address">
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="mb-3" style="text-align: left;">
+                    <label asp-for="Input.Password" class="form-label" style="font-weight: bold; margin-bottom: 20px;">Password</label>
+                    <input asp-for="Input.Password" type="password" class="form-control" placeholder="*********">
+                    <span asp-validation-for="Input.Password" class="text-danger"></span>
+                </div>
+                <div class="mb-3 form-check" style="text-align: left;">
+                    <input asp-for="Input.RememberMe" class="form-check-input" id="rememberMe">
+                    <label class="form-check-label" asp-for="Input.RememberMe">Remember me?</label>
+                    <span asp-validation-for="Input.RememberMe" class="text-danger"></span>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </div>
+                <p style="text-align: center; margin-top: 15px;"><a asp-page="/ForgotPassword" style="color: #6f42c1; text-decoration: none; font-weight: 500;">Forgot password?</a></p>
+            </form>
+        </div>
+    </div>
+</div>

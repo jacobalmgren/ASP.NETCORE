@@ -1,0 +1,112 @@
+﻿@page
+@model AccountDetailsModel
+@{
+    ViewData["Title"] = "Account Details";
+}
+
+<div class="container" style="margin-top: 4rem; margin-bottom: 4rem;">
+    <div class="row">
+        <div class="col-md-3 text-center position-relative profile-section">
+            <div class="profile-pic-container" style="position: relative; display: inline-block;">
+                <img src="~/images/profile.svg" alt="Profile Image" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
+                <button class="btn position-absolute d-flex justify-content-center align-items-center" style="background-color: white; right: 10px; bottom: -5px; width: 30px; height: 30px; border-radius: 50%; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);">
+                    <img src="~/images/bx-refresh.svg" alt="Refresh Icon" style="width: 18px; height: 18px;">
+                </button>
+            </div>
+            <h3 class="mt-4" style="font-size: 18px; font-weight: 700;">@Model.Input.FirstName @Model.Input.LastName</h3>
+            <p>@Model.Input.Email</p>
+            <div class="d-grid gap-1 btn-account-details">
+                <button class="btn btn-primary mb-1 d-flex align-items-center justify-content-start" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,.3); font-size: 14px; font-weight: 700;">
+                    <img src="~/images/bx-cog.svg" alt="Account Details Icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                    <span class="text-left">Account Details</span>
+                </button>
+            </div>
+            <form method="post" asp-page-handler="Logout">
+                <div class="d-grid gap-1 btn-sign-out">
+                    <button type="submit" class="btn btn-outline-secondary d-flex align-items-center justify-content-start" style="font-weight: 500; color: #343a40; border: none; box-shadow: none; font-size: 16px;">
+                        <img src="~/images/bx-log-out.svg" alt="Sign Out Icon" style="width: 20px; height: 20px; margin-right: 10px;">
+                        Sign Out
+                    </button>
+                </div>
+                @Html.AntiForgeryToken()
+            </form>
+        </div>
+
+        <div class="col-md-1">
+            <div class="vertical-divider" style="height: 100%; width: 1px; background-color: #ccc; margin-left: auto; margin-right: auto;"></div>
+        </div>
+        <div class="col-md-6">
+            <h1 style="text-align: left; margin-bottom: 20px; font-size: 28px; font-weight: 700;">Account Details</h1>
+            <form id="updateDetailsForm" method="post" asp-page-handler="UpdateDetails">
+                <div class="mb-4">
+                    <h2 style="color: #6468ff; font-size: 18px; margin-bottom: 20px; margin-top: 40px;">Basic Info</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="FirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="FirstName" name="FirstName" placeholder="First Name" value="@Model.Input.FirstName" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="LastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="LastName" name="LastName" placeholder="Last Name" value="@Model.Input.LastName" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="Email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="Email" name="Email" placeholder="Email Address" value="@Model.Input.Email" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="PhoneNumber" class="form-label">Phone</label>
+                            <input type="text" class="form-control" id="PhoneNumber" name="PhoneNumber" placeholder="Phone Number" value="@Model.Input.PhoneNumber">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Bio" class="form-label">Bio</label>
+                        <textarea class="form-control" id="Bio" name="Bio" rows="3" placeholder="Add a short bio..." required>@Model.Input.Bio</textarea>
+                    </div>
+
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 form-button-group">
+                    <button type="button" class="btn btn-outline-primary me-2" onclick="location.reload();">Cancel</button>
+                    <button type="submit" class="btn btn-primary" style="font-size: 12px; font-weight: 700;">Save Changes</button>
+                </div>
+            </form>
+            <hr>
+            <form id="updateAddressForm" method="post" asp-page-handler="UpdateAddress">
+                <div class="mb-4">
+                    <h2 style="color: #6468ff; font-size: 18px; margin-bottom: 20px; margin-top: 40px;">Address</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="AddressLine1" class="form-label">Address Line 1</label>
+                            <input type="text" class="form-control" id="AddressLine1" name="AddressLine1" placeholder="Address Line 1" value="@Model.Input.AddressLine1" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="AddressLine2" class="form-label">Address Line 2 (Optional)</label>
+                            <input type="text" class="form-control" id="AddressLine2" name="AddressLine2" placeholder="Address Line 2" value="@Model.Input.AddressLine2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="PostalCode" class="form-label">Postal Code</label>
+                            <input type="text" class="form-control" id="PostalCode" name="PostalCode" placeholder="Postal Code" value="@Model.Input.PostalCode" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="City" class="form-label">City</label>
+                            <input type="text" class="form-control" id="City" name="City" placeholder="City" value="@Model.Input.City" required>
+                        </div>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 form-button-group">
+                        <button type="button" class="btn btn-outline-primary me-2" onclick="location.reload();">Cancel</button>
+                        <button type="submit" class="btn btn-primary" style="font-size: 12px; font-weight: 700;">Save Changes</button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <script src="~/js/account.js" asp-append-version="true"></script>
+
+</div>
+
+
+

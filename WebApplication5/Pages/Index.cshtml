@@ -1,0 +1,374 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="header-content">
+        <div class="left-column">
+            <h1 class="display-4 font-weight-bold">Task Management Assistant You Gonna Love</h1>
+            <p class="first-text">We offer you a new generation of task management system. Plan, manage & track all your tasks in one flexible tool.</p>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a class="btn btn-primary" asp-area="" asp-page="/Courses">
+                    Go to Courses
+                </a>
+            }
+            else
+            {
+                <a class="btn btn-primary" asp-area="" asp-page="/Account/Register">
+                    Get started for free
+                </a>
+            }
+
+
+            <p class="second-text">Largest companies use our tool to work efficiently.</p>
+            <div class="logo-container">
+                <div><img src="~/images/logo.png" class="img-fluid" alt="Logo"></div>
+                <div><img src="~/images/logo (1).png" class="img-fluid" alt="Logo"></div>
+                <div><img src="~/images/logo (2).png" class="img-fluid" alt="Logo"></div>
+                <div><img src="~/images/logo (3).png" class="img-fluid" alt="Logo"></div>
+            </div>
+        </div>
+        <div class="right-column">
+            <img src="~/images/image.png" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+</div>
+
+<div class="features-container my-5">
+    <div class="text-center">
+        <h2 class="mb-3">
+            What Do You Get with Our Tool?
+        </h2>
+        <p class="mb-5">
+            Make sure all your tasks are organized so you can set the priorities and focus
+            on important.
+        </p>
+    </div>
+    <div class="features-grid">
+        <div class="feature-row top-row">
+            <div class="feature-card">
+                <img src="~/images/icon.svg" alt="Feature 1" class="img-fluid mb-3">
+                <h3 class="mb-2">
+                    Comments on Tasks
+                </h3>
+                <p>
+                    Id mollis consectetur congue egestas egestas
+                    suspendisse blandit justo.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="~/images/icon (1).svg" alt="Feature 2" class="img-fluid mb-3">
+                <h3 class="mb-2">
+                    Tasks Analytics
+                </h3>
+                <p>
+                    Non imperdiet facilisis nulla tellus Morbi
+                    scelerisque eget adipiscing vulputate.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="~/images/icon (2).svg" alt="Feature 3" class="img-fluid mb-3">
+                <h3 class="mb-2">
+                    Multiple Assignees
+                </h3>
+                <p>
+                    A elementum, imperdiet enim, pretium etiam
+                    facilisi in aenean quam mauris.
+                </p>
+            </div>
+        </div>
+        <div class="feature-row bottom-row">
+            <div class="feature-card">
+                <img src="~/images/icon (3).svg" alt="Feature 4" class="img-fluid mb-3">
+                <h3 class="mb-2">
+                    Notifications
+                </h3>
+                <p>
+                    Diam, suspendisse velit cras ac. Lobortis diam
+                    volutpat, eget pellentesque viverra.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="~/images/icon (4).svg" alt="Feature 5" class="img-fluid mb-3">
+                <h3 class="mb-2">
+                    Sections & Subtasks
+                </h3>
+                <p>
+                    Mi feugiat hac id in. Sit elit placerat lacus nibh
+                    lorem ridiculus lectus.
+                </p>
+            </div>
+            <div class="feature-card">
+                <img src="~/images/icon (5).svg" alt="Feature 6" class="img-fluid mb-3">
+                <h3 class="mb-2">
+                    Data Security
+                </h3>
+                <p>
+                    Aliquam malesuada neque eget elit nulla
+                    vestibulum nunc cras.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="split-background-section">
+    <div class="half-background black"></div>
+    <div class="half-background white"></div>
+    <div class="circle-icon"></div>
+    <div class="container">
+        <div class="text-and-image-overlay">
+            <h2 class="split-title">
+                <span class="text-white">Switch between</span>
+                <span class="text-black">Light &amp; Dark Mode</span>
+            </h2>
+            <img src="~/images/mockup.svg" alt="Feature Visual" class="img-fluid">
+        </div>
+    </div>
+</div>
+
+<div class="container my-5 d-flex justify-content-center">
+    <div class="row align-items-center">
+        <div class="col-md-5">
+            <img src="~/images/image.svg" class="img-fluid" alt="Descriptive Alt Text">
+        </div>
+        <div class="col-md-6 custom-right-shift">
+            <h2>Manage Your Work</h2>
+            <ul>
+                <li>Powerful project management</li>
+                <li>Transparent work management</li>
+                <li>Manage work & focus on the most important tasks</li>
+                <li>Track your progress with interactive charts</li>
+                <li>Easiest way to track time spent on task</li>
+            </ul>
+            <a class="btn btn-primary btn-with-img-right" asp-area="" asp-page="/Courses">
+                Learn More
+                <img src="~/images/icon-r.svg" alt="Learn More" width="20" height="20">
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container-fluid py-5" style="background-color: #F3F6FF;">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-8" style="background-color: #EFF2FC; padding: 20px; border-radius: 10px;">
+            <div class="row">
+                <div class="col-md-6 d-flex flex-column align-items-start overlapping-images">
+                    <img src="~/images/group 2103.svg" class="img-fluid mb-2 side-image" alt="Image 1">
+                    <img src="~/images/iphone 12 pro.svg" class="img-fluid bottom-image" alt="Image 2" style="margin-left: 20px;">
+                </div>
+                <div class="col-md-6 mt-5">
+                    <h2>Download Our App <br> <span class="d-block">for Any Devices</span></h2>
+
+                    <p style="margin-bottom: 0;">App Store</p>
+                    <p><span class="text-warning">★★★★★</span></p>
+                    <div class="d-flex justify-content-start align-items-center">
+                        <div class="me-3">
+                            <h3>Editor's Choice</h3>
+                            <p>rating 4.7, 187K+ reviews</p>
+                        </div>
+                        <img src="~/images/appstore.svg" alt="App Store Logo" class="appstore-logo">
+                    </div>
+
+                    <p style="margin-bottom: 0;">Google Play</p>
+                    <p><span class="text-warning">★★★★★</span></p>
+                    <div class="d-flex justify-content-start align-items-center">
+                        <div class="me-3">
+                            <h3>App of the Day</h3>
+                            <p>rating 4.8, 30K+ reviews</p>
+                        </div>
+                        <img src="~/images/googleplay.svg" alt="Google Play Logo" class="appstore-logo" style="width: 150px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container my-5 custom-container" style="padding-left: 250px; padding-right: 250px;">
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-10">
+            <div class="text-center">
+                <h2 class="mt-3rem">Integrate Top Work Tools</h2>
+                <p class="text-center intro-text intro-text-width">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin volutpat mollis egestas. Nam luctus facilisis ultrices. Pellentesque volutpat ligula est. Mattis fermentum, at nec lacus..
+                </p>
+            </div>
+            <div class="row text-center mt-4 gx-4">
+                <div class="col-md-3 mb-4 text-left partner-column">
+                    <div class="partner-icon-wrapper">
+                        <img src="~/images/google.svg" alt="Partner Logo 1" class="img-fluid">
+                    </div>
+                    <p class="partner-description">
+                        Lorem magnis pretium sed curabitur nunc facilisi nunc cursus sagittis.
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4 text-left partner-column">
+                    <div class="partner-icon-wrapper">
+                        <img src="~/images/zoom.svg" alt="Partner Logo 2" class="img-fluid">
+                    </div>
+                    <p class="partner-description">
+                        In eget a mauris quis. Tortor dui tempus quis integer est sit natoque placerat dolor.
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4 text-left partner-column">
+                    <div class="partner-icon-wrapper">
+                        <img src="~/images/slack.svg" alt="Partner Logo 3" class="img-fluid">
+                    </div>
+                    <p class="partner-description">
+                        Id mollis consectetur congue egestas egestas suspendisse blandit justo.
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4 text-left partner-column">
+                    <div class="partner-icon-wrapper">
+                        <img src="~/images/gmail.svg" alt="Partner Logo 4" class="img-fluid">
+                    </div>
+                    <p class="partner-description">
+                        Rutrum interdum tortor, sed at nulla. A cursus bibendum elit purus cras praesent.
+                    </p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-3 mb-4 text-left partner-column">
+                    <div class="partner-icon-wrapper">
+                        <img src="~/images/trello.svg" alt="Partner Logo 5" class="img-fluid">
+                    </div>
+                    <p class="partner-description">
+                        Congue pellentesque amet, viverra curabitur quam diam scelerisque fermentum urna.
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4 text-left partner-column">
+                    <div class="partner-icon-wrapper">
+                        <img src="~/images/mailchimp.svg" alt="Partner Logo 6" class="img-fluid">
+                    </div>
+                    <p class="partner-description">
+                        A elementum, imperdiet enim, pretium etiam facilisi in aenean quam mauris.
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4 text-left partner-column">
+                    <div class="partner-icon-wrapper">
+                        <img src="~/images/dropbox.svg" alt="Partner Logo 7" class="img-fluid">
+                    </div>
+                    <p class="partner-description">
+                        Ut in turpis consequat odio diam lectus elementum. Est faucibus blandit platea.
+                    </p>
+                </div>
+                <div class="col-md-3 mb-4 text-left partner-column">
+                    <div class="partner-icon-wrapper">
+                        <img src="~/images/evernote.svg" alt="Partner Logo 8" class="img-fluid">
+                    </div>
+                    <p class="partner-description">
+                        Faucibus cursus maecenas lorem cursus nibh. Sociis sit risus id. Sit facilisis dolor arcu.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="custom-section py-5" style="background-color: #F3F6FF; padding-left: 250px; padding-right: 250px;">
+    <div class="container">
+        <div class="row align-items-center mb-4">
+            <div class="col-md-8 offset-md-2 d-flex align-items-center text-image-container">
+                <h2 class="m-0">Don't Want to Miss Anything?</h2>
+                <img src="~/images/arrows.svg" alt="Description" class="img-fluid arrows-image ms-3">
+            </div>
+        </div>
+
+        <div class="row align-items-center newsletter-signup-row">
+            <div class="col-md-2 text-end">
+                <h5>Sign up for</h5>
+            </div>
+            <div class="col-md-10 newsletter-options-container">
+                <div class="row">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
+                        <p>Daily Newsletter</p>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <img src="~/images/bx-check-square.svg" alt="Description" class="img-fluid me-3">
+                        <p>Advertising Updates</p>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
+                        <p>Week in Review</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center newsletter-options-row mt-3">
+            <div class="col-md-2 text-end">
+                <h5>Newsletters</h5>
+            </div>
+            <div class="col-md-10 newsletter-options-container">
+                <div class="row">
+                    <div class="col-md-4 d-flex align-items-center">
+                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
+                        <p>Event Updates</p>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
+                        <p>Startup Weekly</p>
+                    </div>
+                    <div class="col-md-4 d-flex align-items-center">
+                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
+                        <p>Podcasts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center mt-4">
+            <div class="col-md-8 d-flex justify-content-center align-items-center mb-2">
+                <form id="newsletterForm">
+                    <label>Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+            <div class="col-md-8 text-left">
+                <small>*Yes, I agree to the <a href="#">terms</a> and <a href="#">privacy policy</a>.</small>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', (event) => {
+                document.getElementById("newsletterForm").addEventListener("submit", function (event) {
+                    event.preventDefault();
+
+                    var emailValue = document.getElementById("email").value;
+                    var data = JSON.stringify({ email: emailValue });
+
+                    fetch('https://localhost:7044/Subscribe', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: data
+                    })
+
+                        .then(response => {
+                            if (response.ok) {
+                                return response.text();
+                            } else {
+                                throw new Error('Subscription failed');
+                            }
+                        })
+                        .then(data => {
+                            alert(data);
+                        })
+                        .catch(error => {
+                            console.error('Error:', error);
+                            alert('Error: ' + error.message);
+                        });
+                });
+            });
+        </script>
+
+
+    </div>
+</div>
+

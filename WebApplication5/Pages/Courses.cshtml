@@ -1,0 +1,342 @@
+﻿@page
+@model CoursesModel
+@using Microsoft.AspNetCore.Authorization
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Courses";
+}
+
+<div class="container mt-4" style="padding-left: 250px; padding-right: 250px;">
+    <div class="mb-4">
+        <img src="~/images/bx-home-alt.svg" alt="Home Icon" style="width: 20px; height: 20px;">
+        <span class="mx-1" style="font-size: 14px;">Home</span>
+        <img src="~/images/arrow.svg" alt="Arrow" style="width: 10px; height: 10px; margin-left: 5px; margin-right: 5px;">
+        <a href="/Courses" class="text-decoration-none" style="font-size: 14px; margin-left: 5px;">Courses</a>
+    </div>
+
+    <div class="mb-4 d-flex justify-content-between align-items-center">
+        <h1 class="mb-0">Courses</h1>
+        <div class="d-flex align-items-center">
+            <select class="form-select me-2" style="width: 200px; border-radius: 5px;">
+                <option selected>All categories</option>
+                <option value="1">Category 1</option>
+                <option value="2">Category 2</option>
+                <option value="3">Category 3</option>
+            </select>
+            <div class="input-group" style="width: 300px;">
+                <input type="text" class="form-control" placeholder="Search courses" aria-label="Search courses" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                <button class="btn" type="button" id="button-addon2" style="border-top-left-radius: 0; border-bottom-left-radius: 0; background-color: white; border-right: 1px solid #ced4da; border-top: 1px solid #ced4da; border-bottom: 1px solid #ced4da;">
+                    <i class="fa fa-search" aria-hidden="true" style="color: gray;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <span class="position-absolute" style="background-color: #22C55E; color: white; border-radius: 5px; font-weight: normal; top: 15px; left: 15px; padding: 0px 10px;">Best Seller</span>
+                <img src="~/images/fullstack.svg" class="card-img-top" alt="Course 1 Image">
+                <div class="card-body">
+                    <h5 class="card-title">Fullstack Web Developer Course from Scratch</h5>
+                    <p class="card-text">By Robert Fox</p>
+                    <p class="lead" style="color: #6366F1; font-weight: bold;">$12.50</p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">220 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">94% (4.2K)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <img src="~/images/htmlcss.svg" class="card-img-top" alt="Course 2 Image">
+                <div class="card-body">
+                    <h5 class="card-title">HTML, CSS, JavaScript Web Developer</h5>
+                    <p class="card-text">By Jenny Wilson & Marvin McKinney</p>
+                    <p class="lead" style="color: #6366F1; font-weight: bold;">$15.99</p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">160 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">92% (3.1K)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <img src="~/images/thecomplete.svg" class="card-img-top" alt="Course 2 Image">
+                <div class="card-body">
+                    <h5 class="card-title">The Complete Front-End Web Development Course</h5>
+                    <p class="card-text">By Albert Flores.</p>
+                    <p class="lead"><span style="color: #EF4444; font-weight: bold;">$9.99</span> <span style="color: gray; text-decoration: line-through;">$44.99</span></p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">100 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">98% (2.7K)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <img src="~/images/iosswift.svg" class="card-img-top" alt="Course 2 Image">
+                <div class="card-body">
+                    <h5 class="card-title">iOS & Swift - The Complete iOS App Development Course</h5>
+                    <p class="card-text">By Marvin McKinney</p>
+                    <p class="lead" style="color: #6366F1; font-weight: bold;">$15.99</p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">160 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">92% (3.1K)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <span class="position-absolute" style="background-color: #22C55E; color: white; border-radius: 5px; font-weight: normal; top: 15px; left: 15px; padding: 0px 10px;">Best Seller</span>
+                <img src="~/images/datascience.svg" class="card-img-top" alt="Course 2 Image">
+                <div class="card-body">
+                    <h5 class="card-title">Data Science & Machine Learning with Python</h5>
+                    <p class="card-text">By Esther Howard</p>
+                    <p class="lead" style="color: #6366F1; font-weight: bold;">$11.20</p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">160 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">92% (3.1K)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <img src="~/images/creativecss.svg" class="card-img-top" alt="Course 2 Image">
+                <div class="card-body">
+                    <h5 class="card-title">Creative CSS Drawing Course: Make Art With CSS</h5>
+                    <p class="card-text">By Robert Fox</p>
+                    <p class="lead" style="color: #6366F1; font-weight: bold;">$10.50</p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">220 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">94% (4.2K)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <img src="~/images/blender.svg" class="card-img-top" alt="Course 2 Image">
+                <div class="card-body">
+                    <h5 class="card-title">Blender Character Creator v2.0 for Video Games Design</h5>
+                    <p class="card-text">By Ralph Edwards</p>
+                    <p class="lead" style="color: #6366F1; font-weight: bold;">$18.99</p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">160 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">92% (3.1K)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <img src="~/images/ultimate.svg" class="card-img-top" alt="Course 2 Image">
+                <div class="card-body">
+                    <h5 class="card-title">The Ultimate Guide to 2D Mobile Game Development with Unity</h5>
+                    <p class="card-text">By Albert Flores</p>
+                    <p class="lead"><span style="color: #EF4444; font-weight: bold;">$12.99</span> <span style="color: gray; text-decoration: line-through;">$44.99</span></p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">100 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">98% (2.7K)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-4">
+            <div class="card h-100 position-relative">
+                <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
+                    <img src="~/images/S.svg" alt="S" style="width: 30px; height: 30px;">
+                </button>
+                <img src="~/images/jmeter.svg" class="card-img-top" alt="Course 2 Image">
+                <div class="card-body">
+                    <h5 class="card-title">Learn JMETER from Scratch on Live Apps-Performance Testing</h5>
+                    <p class="card-text">By Jenny Wilson</p>
+                    <p class="lead" style="color: #6366F1; font-weight: bold;">$14.50</p>
+                    <hr>
+                    <div class="d-flex justify-content-start">
+                        <div class="d-flex align-items-center">
+                            <img src="~/images/bx-time-five.svg" alt="Duration" width="30" height="30">
+                            <p class="ms-2 mb-0 small">160 hours</p>
+                        </div>
+                        <div class="d-flex align-items-center ms-4">
+                            <img src="~/images/bx-like.svg" alt="Satisfaction Rate" width="30" height="30">
+                            <p class="ms-2 mb-0 small">92% (3.1K)</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <style>
+        .pagination .page-link {
+            border: none;
+            color: #33354D;
+            border-radius: 5px;
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 12px;
+            font-family: 'Manrope', sans-serif;
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+
+        .pagination .page-item.active .page-link {
+            background-color: #6366F1;
+            color: white;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .pagination {
+            border-radius: 10px;
+        }
+
+        .page-link-arrow {
+            display: inline-block;
+            background-color: transparent;
+            color: #33354D;
+        }
+
+            .page-link-arrow img {
+                width: 8px;
+                height: auto;
+            }
+    </style>
+
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link page-link-arrow" href="#" aria-label="Previous">
+                    <img src="~/images/leftarrow.svg" alt="Previous">
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item active"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item">
+                <a class="page-link page-link-arrow" href="#" aria-label="Next">
+                    <img src="~/images/rightarrow.svg" alt="Next">
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row" style="background-color: #F3F6FF; padding: 40px 20px; border-radius: 5px;">
+            <div class="col-md-6 d-flex align-items-center justify-content-center">
+                <div>
+                    <h5 style="color: #33354D; margin-bottom: 20px; font-weight: 400; font-family: 'Manrope', sans-serif;">Ready to get started?</h5>
+                    <h1 style="color: #000000; margin-bottom: 0; font-weight: bold;">Take Your <span style="color: #6366F1;">Skills</span> to the</h1>
+                    <h1 style="color: #000000; margin-bottom: 30px; font-weight: bold;">Next Level</h1>
+                    <button class="btn btn-primary" style="background-color: #6366F1; color: white; border-radius: 5px;">Work with us</button>
+                </div>
+            </div>
+            <div class="col-md-6 d-flex justify-content-center">
+                <img src="~/images/illustration.svg" alt="Banner Image" style="width: 100%; max-width: 500px; height: auto; border-radius: 5px;">
+            </div>
+        </div>
+    </div>
+
+
+
+
+</div>
