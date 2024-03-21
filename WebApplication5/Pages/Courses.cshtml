@@ -352,6 +352,9 @@
                         data.forEach(course => {
                             const courseElement = document.createElement('div');
                             courseElement.className = 'col-md-4 mb-4';
+                        let priceContent = course.isOnSale
+                            ? `<p class="lead"><span style="color: #EF4444; font-weight: bold;">${course.salePrice}</span> <span style="color: gray; text-decoration: line-through;">${course.originalPrice}</span></p>`
+                            : `<p class="lead" style="color: #6366F1; font-weight: bold;">${course.price}</p>`;
                             courseElement.innerHTML = `
                                 <div class="card h-100 position-relative">
                                         <button class="btn position-absolute top-0 end-0 mt-2 me-2" style="background-color: transparent; border: none;">
@@ -362,8 +365,8 @@
                                     <div class="card-body">
                                         <h5 class="card-title">${course.title}</h5>
                                         <p class="card-text">By ${course.instructor}</p>
-                                        <p class="lead" style="color: #6366F1; font-weight: bold;">${course.price}</p>
-                                        <hr>
+                                        ${priceContent}
+                                                <hr>
                                         <div class="d-flex justify-content-start">
                                             <div class="d-flex align-items-center">
                                                                 <img src="${course.durationImage}" alt="Duration" width="30" height="30">
