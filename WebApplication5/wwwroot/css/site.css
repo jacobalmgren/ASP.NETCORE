@@ -486,7 +486,7 @@ header {
 
 .profile-section {
     padding-right: 0;
-    padding-left: 225px; /* Adjust if needed to move section closer to the divider */
+    padding-left: 225px;
     text-align: center;
 }
 
@@ -502,7 +502,7 @@ header {
 }
 
     .btn-sign-out .btn {
-        justify-content: start; /* Align the text and icon to the start */
+        justify-content: start; 
     }
 
 .form-button-group {
@@ -512,6 +512,48 @@ header {
 }
 
 .btn-account-details > .btn, .btn-sign-out > .btn {
-    display: inline-flex; /* Align items horizontally */
+    display: inline-flex; 
     align-items: center;
+}
+
+
+.email-icon {
+    width: 20px; 
+    position: absolute;
+    margin-top: 13px; 
+    left: 10px; 
+    z-index: 3;
+}
+
+.pl-email-input {
+    padding-left: 40px;
+    border-radius: 5px;
+    height: 45px;
+    border-radius: 5px !important; 
+}
+
+    .pl-email-input:focus {
+        background-color: transparent; 
+    }
+
+.input-group .form-control {
+    border-radius: 5px !important;
+}
+
+    .newsletter-options-container .d-flex.align-items-center p {
+        margin-bottom: 0; 
+        margin-top: 0; 
+    }
+
+.col-md-4.d-flex.align-items-center {
+    padding-left: 5px; 
+    padding-right: 5px; 
+}
+
+.newsletter-options-container img.img-fluid.me-3 {
+    margin-right: 5px; 
+}
+
+.newsletter-options-container .row > div {
+    padding-bottom: 5px; 
 }

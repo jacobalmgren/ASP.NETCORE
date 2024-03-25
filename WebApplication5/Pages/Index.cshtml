@@ -322,17 +322,22 @@
             </div>
         </div>
         <div class="row justify-content-center align-items-center mt-4">
-            <div class="col-md-8 d-flex justify-content-center align-items-center mb-2">
-                <form id="newsletterForm">
-                    <label>Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <button type="submit" class="btn btn-primary">Subscribe</button>
+            <div class="col-md-8 mb-2">
+                <form id="newsletterForm" class="w-100 position-relative">
+                    <div class="d-flex align-items-center">
+                        <div class="input-group flex-grow-1">
+                            <img src="~/images/bx-envelope.svg" alt="Email" class="email-icon">
+                            <input type="email" id="email" name="email" placeholder="Your Email" class="form-control pl-email-input" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary ms-2">Subscribe</button>
+                    </div>
                 </form>
             </div>
             <div class="col-md-8 text-left">
                 <small>*Yes, I agree to the <a href="#">terms</a> and <a href="#">privacy policy</a>.</small>
             </div>
         </div>
+
 
         <script>
             document.addEventListener('DOMContentLoaded', (event) => {
