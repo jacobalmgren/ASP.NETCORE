@@ -37,7 +37,7 @@ function setupValidation(form, validationSettings) {
             });
 
             if (!isValid) {
-                event.preventDefault(); /
+                event.preventDefault(); 
             }
         });
     }
