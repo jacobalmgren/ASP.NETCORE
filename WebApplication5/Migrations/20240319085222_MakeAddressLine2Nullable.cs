@@ -12,7 +12,7 @@ namespace WebApplication5.Migrations
         {
             migrationBuilder.AlterColumn<string>(
                 name: "AddressLine2",
-                table: "AspNetUsers", // Ensure this is your correct table name
+                table: "AspNetUsers", 
                 type: "nvarchar(max)",
                 nullable: true,
                 oldClrType: typeof(string),
@@ -24,7 +24,7 @@ namespace WebApplication5.Migrations
         {
             migrationBuilder.AlterColumn<string>(
                 name: "AddressLine2",
-                table: "AspNetUsers", // Ensure this is your correct table name
+                table: "AspNetUsers", 
                 type: "nvarchar(max)",
                 nullable: false,
                 oldClrType: typeof(string),
