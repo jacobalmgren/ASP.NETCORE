@@ -108,8 +108,66 @@ main {
 }
 
 .container {
-    max-width: 100%;
+    max-width: 1920px;
     margin: auto;
+}
+
+@media (min-width: 3440px) {
+    .container {
+        max-width: 1920px; /* Adjust container max width */
+    }
+
+    .navbar, .header-content {
+        padding-left: 10%; /* Adjust based on your design */
+        padding-right: 10%;
+    }
+
+    .left-column h1 {
+        font-size: 60px; /* Larger text */
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column-reverse;
+        padding: 15px; /* Adjust padding for mobile screens */
+        text-align: center; /* Center-align the text for mobile */
+    }
+
+    .left-column, .right-column {
+        flex-basis: 100%;
+        padding-right: 0; /* Remove padding-right on mobile for full width */
+    }
+
+        .left-column h1 {
+            font-size: 28px; /* Adjust headline font size for mobile */
+            font-weight: bold; /* Ensure the font weight is bold enough */
+        }
+
+        .left-column p.first-text, .left-column p.second-text {
+            font-size: 16px; /* Adjust paragraph text size for better readability on mobile */
+        }
+
+        .left-column .btn-primary {
+            padding: 10px 20px; /* Adjust button padding for a better tap target size */
+            font-size: 16px; /* Adjust button font size for better readability */
+            margin-bottom: 20px; /* Add some space below the button */
+        }
+
+    .logo-container {
+        justify-content: center; /* Center logos container */
+        flex-wrap: wrap; /* Allow logos to wrap onto the next line if needed */
+    }
+
+        .logo-container > div {
+            margin: 10px; /* Add some space around each logo */
+            width: auto; /* Adjust width to auto to avoid stretching logos */
+        }
+
+    .right-column img {
+        min-width: 420px; /* Remove the max-width restriction */
+        margin: 0 auto 0 0; /* Adjust margin to remove space on the right */
+    }
 }
 
 .header-content {
@@ -158,57 +216,6 @@ main {
     .logo-container > div {
         width: 24%;
     }
-
-.img-fluid {
-    max-width: 146.5%;
-    height: auto;
-}
-
-.features-container {
-    background-color: #F3F6FF;
-    padding: 40px;
-    margin-top: 30px;
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    width: 100%;
-    max-width: 1200px;
-}
-
-.feature-row {
-    display: contents;
-}
-
-.mb-2 {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.feature-card {
-    padding: 20px;
-    text-align: center;
-    position: relative;
-}
-
-    .feature-card:hover {
-        background-color: white;
-        border-radius: 10px;
-        transition: background-color 0.3s ease, border-radius 0.3s ease;
-    }
-
-.features-grid > .feature-row > .feature-card:not(:last-child) {
-    border-right: 1px solid #E2E5F1;
-}
-
-.top-row > .feature-card {
-    border-bottom: 1px solid #E2E5F1;
-}
 
 .split-background-section {
     margin-top: -50px;
@@ -368,6 +375,28 @@ main {
     position: relative;
     margin-left: 20px;
     margin-top: -510px;
+}
+
+@media (max-width: 768px) {
+    .overlapping-images .side-image,
+    .overlapping-images .bottom-image {
+        max-width: 50%; /* Limit both images' width to prevent overflow */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 0; /* Ensure there's no extra space on the right */
+        margin-left: 0; /* Align the images to the left edge of their container */
+    }
+
+    .overlapping-images {
+        padding-right: 0; /* Remove any right padding that might push the images out of bounds */
+        display: flex; /* Use flexbox to control the layout of the images */
+        flex-direction: row; /* Stack the images horizontally */
+        align-items: center; /* Center the images vertically within the container */
+    }
+
+        /* If you want space between the images */
+        .overlapping-images .bottom-image {
+            margin-left: 10px; /* Adjust space between the images if needed */
+        }
 }
 
 .orange-stars {
@@ -580,3 +609,216 @@ main {
         width: 8px;
         height: auto;
     }
+
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.img-fluid {
+    max-width: 146.5%; /* Adjusted from 146.5% to 100% */
+    height: auto;
+}
+
+/* Additional Media Query for High-Resolution Displays */
+@media (min-width: 2560px) {
+    .img-fluid {
+        max-width: 138%; /* Adjust as needed for high-resolution displays */
+
+    }
+}
+
+.features-container {
+    background-color: #F3F6FF;
+    padding: 40px;
+    margin-top: 30px;
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    max-width: 1200px;
+}
+
+.feature-row {
+    display: contents;
+}
+
+.mb-2 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.feature-card {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+    .feature-card:hover {
+        background-color: white;
+        border-radius: 10px;
+        transition: background-color 0.3s ease, border-radius 0.3s ease;
+    }
+
+.features-grid > .feature-row > .feature-card:not(:last-child) {
+    border-right: 1px solid #E2E5F1;
+}
+
+.top-row > .feature-card {
+    border-bottom: 1px solid #E2E5F1;
+}
+
+@media (max-width: 768px) {
+    .split-background-section {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        min-height: auto; /* Adjust height based on content */
+    }
+
+    .half-background {
+        width: 50%; /* Full width */
+        background: black;
+        right: 50%;
+    }
+
+    .circle-icon {
+        top: 50%; /* Center the circle vertically in the visible viewport */
+    }
+
+    .split-title {
+        font-size: 20px; /* Smaller font size for mobile */
+        margin-top: 20px; /* Adjust spacing */
+        margin-bottom: 20px;
+    }
+
+    .text-and-image-overlay img {
+        max-width: 95%; /* Allow image to take up more width on small screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .custom-container {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .partner-icon-wrapper img {
+        width: 20%; /* Adjust the size of the icons */
+        height: auto;
+        margin-bottom: 10px; /* Add some space between the icon and the description */
+    }
+
+    .partner-description {
+        font-size: 14px; /* Adjust the font size for readability */
+    }
+
+    .mt-3rem {
+        margin-top: 1.5rem !important;
+        font-size: 24px; /* Adjust the heading size for a better fit */
+    }
+
+    .partner-column {
+        margin-bottom: 30px; /* Add more space between rows */
+    }
+
+    .custom-section {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .text-image-container h2 {
+        font-size: 24px; /* Smaller font size for the heading */
+        margin-bottom: 20px; /* More space between the heading and the image */
+    }
+
+    .arrows-image {
+        width: 20%; /* Smaller arrows image */
+        height: auto;
+    }
+
+    .newsletter-signup-row .col-md-2, .newsletter-options-row .col-md-2 {
+        text-align: left !important; /* Force center alignment */
+    }
+
+    .newsletter-signup-row, .newsletter-options-row {
+        text-align: left; /* Ensures container alignment complements the text */
+    }
+
+    .newsletter-options-container .d-flex.align-items-center {
+        justify-content: left; /* Center the flex items within the container */
+    }
+
+    .newsletter-options-container .row > div {
+        margin-bottom: 10px; /* More space between options */
+    }
+
+    .newsletter-options-container img {
+        width: 5%; /* Adjust the size of checkboxes */
+    }
+
+    #newsletterForm {
+        flex-direction: column;
+    }
+
+        #newsletterForm .input-group {
+            width: 100%;
+            margin-bottom: 15px; /* Space between input and button */
+        }
+
+    .btn-primary {
+        width: 100%; /* Full width button */
+    }
+
+    .navbar, .header-content {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .left-column, .right-column {
+        padding-right: 15px;
+        margin-top: 50px;
+        flex-basis: 100%;
+    }
+
+        .left-column h1 {
+            font-size: 32px; /* Smaller text for mobile */
+        }
+
+    .features-grid {
+        grid-template-columns: repeat(1, 1fr); /* Adjust grid for single column layout */
+    }
+
+    .img-fluid {
+        max-width: 100%; /* Ensure images are not wider than the screen */
+    }
+
+    .logo-container > div, .features-container, .partner-column, .inner-box {
+        width: 100%; /* Adjust widths to be responsive */
+    }
+
+    .split-background-section, .overlapping-images .side-image, .overlapping-images .bottom-image {
+        display: block; /* Adjust layout for mobile */
+        width: 100%;
+        position: relative;
+        margin-top: 20px;
+    }
+
+    .btn-primary, .btn-outline-primary {
+        width: 100%; /* Full width buttons */
+        margin-bottom: 15px; /* Space between buttons */
+    }
+
+    .navbar-nav .nav-link, .footer a, .pagination .page-link {
+        font-size: 14px; /* Adjust font size for readability */
+    }
+
+    .profile-section, .newsletter-options-container, .features-grid > .feature-row > .feature-card {
+        padding: 15px; /* Adjust padding for content */
+    }
+}
