@@ -287,16 +287,16 @@
             <div class="col-md-10 newsletter-options-container">
                 <div class="row">
                     <div class="col-md-4 d-flex align-items-center">
-                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
-                        <p>Daily Newsletter</p>
+                        <input asp-for="NewsletterSignupModel.DailyNewsletter" class="me-3" type="checkbox" />
+                        <label asp-for="NewsletterSignupModel.DailyNewsletter">Daily Newsletter</label>
                     </div>
                     <div class="col-md-4 d-flex align-items-center">
-                        <img src="~/images/bx-check-square.svg" alt="Description" class="img-fluid me-3">
-                        <p>Advertising Updates</p>
+                        <input asp-for="NewsletterSignupModel.AdvertisingUpdates" class="me-3" type="checkbox" />
+                        <label asp-for="NewsletterSignupModel.AdvertisingUpdates">Advertising Updates</label>
                     </div>
                     <div class="col-md-4 d-flex align-items-center">
-                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
-                        <p>Week in Review</p>
+                        <input asp-for="NewsletterSignupModel.WeekInReview" class="me-3" type="checkbox" />
+                        <label asp-for="NewsletterSignupModel.WeekInReview">Week in Review</label>
                     </div>
                 </div>
             </div>
@@ -308,20 +308,21 @@
             <div class="col-md-10 newsletter-options-container">
                 <div class="row">
                     <div class="col-md-4 d-flex align-items-center">
-                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
-                        <p>Event Updates</p>
+                        <input asp-for="NewsletterSignupModel.EventUpdates" class="me-3" type="checkbox" />
+                        <label asp-for="NewsletterSignupModel.EventUpdates">Event Updates</label>
                     </div>
                     <div class="col-md-4 d-flex align-items-center">
-                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
-                        <p>Startup Weekly</p>
+                        <input asp-for="NewsletterSignupModel.StartupWeekly" class="me-3" type="checkbox" />
+                        <label asp-for="NewsletterSignupModel.StartupWeekly">Startup Weekly</label>
                     </div>
                     <div class="col-md-4 d-flex align-items-center">
-                        <img src="~/images/bx-uncheck-square.svg" alt="Description" class="img-fluid me-3">
-                        <p>Podcasts</p>
+                        <input asp-for="NewsletterSignupModel.Podcasts" class="me-3" type="checkbox" />
+                        <label asp-for="NewsletterSignupModel.Podcasts">Podcasts</label>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row justify-content-center align-items-center mt-4">
             <div class="col-md-8 mb-2">
                 <form id="newsletterForm" class="w-100 position-relative">

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using WebApplication5.Models;
+using System.Diagnostics;
 
 namespace WebApplication5.Pages
 {
@@ -18,18 +19,24 @@ namespace WebApplication5.Pages
 
         public void OnGet()
         {
-            
         }
 
         public IActionResult OnPostSubscribe()
         {
             if (!ModelState.IsValid)
             {
-                
-                return Page(); 
+                return Page();
             }
 
-            _logger.LogInformation("New Newsletter Subscription: {Email}", NewsletterSignupModel.Email);
+            _logger.LogInformation("New Newsletter Subscription: Email={Email}, DailyNewsletter={DailyNewsletter}, AdvertisingUpdates={AdvertisingUpdates}, WeekInReview={WeekInReview}, EventUpdates={EventUpdates}, StartupWeekly={StartupWeekly}, Podcasts={Podcasts}",
+                NewsletterSignupModel.Email,
+                NewsletterSignupModel.DailyNewsletter,
+                NewsletterSignupModel.AdvertisingUpdates,
+                NewsletterSignupModel.WeekInReview,
+                NewsletterSignupModel.EventUpdates,
+                NewsletterSignupModel.StartupWeekly,
+                NewsletterSignupModel.Podcasts);
+
 
             return RedirectToPage(); 
         }
